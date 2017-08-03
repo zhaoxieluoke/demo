@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //const regex = /ad+a/;
+    let regex  = new RegExp(":(.*)");
+    console.dir(regex.exec("sdaad:sda"));
+    //使用括号能够获取括号内的内容, 如上面将返回包含:sda,sda的数组
+    //一个正则表达式模式使用括号，将导致相应的子匹配被记住。
+    //例如，/a(b)c /可以匹配字符串“abc”，并且记得“b”
+    ///回调这些括号中匹配的子串，使用数组元素[1],……[n]
+    var re = /(\w+)\s(\w+)/;
+    var str = "John Smith";
+    var newstr = str.replace(re, "$2, $1");
+    console.log(newstr);
+</script>
+</html>
