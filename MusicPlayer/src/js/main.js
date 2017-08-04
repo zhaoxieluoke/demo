@@ -9,38 +9,36 @@ $(function(){
                 music_list.push(ele.id);
             })
             console.dir(music_list);
-            $(".play").on("click", function(){
-                
                 var num = Math.floor(Math.random()*274);
                 $.get({
-                    async: false,
+                    
                     url: "https://bird.ioliu.cn/netease/song?id=" + music_list[num],
                 })
                 .then(function(res){
                     if(res.status.code == 200){
-
-                        $(".player").addClass("run");
-                        $(".play").text("NEXT");
-                        $("#music").attr("src",res.data.mp3.url);
-                        $(".music_info .song_name").text(res.data.name);
-                        $(".music_info .song_author").text(res.data.ar[0].name);
                         
-                        var playPromise = document.querySelector('#music').play();
+                        $(".play").on("click", function(){
+                            $(".player").addClass("run");
+                            $(".play").text("NEXT");
+                            $("#music").attr("src",res.data.mp3.url);
+                            $(".music_info .song_name").text(res.data.name);
+                            $(".music_info .song_author").text(res.data.ar[0].name);    
+                            var playPromise = document.querySelector('#music').play();
 
-                        // In browsers that don’t yet support this functionality,
-                        // playPromise won’t be defined.
-                        if (playPromise !== undefined) {
-                            playPromise.then(function() {
-                                // Automatic playback started!
-                            }).catch(function(error) {
-                                // Automatic playback failed.
-                                // Show a UI element to let the user manually start playback.
-                            });
-                        }
+                            // In browsers that don’t yet support this functionality,
+                            // playPromise won’t be defined.
+                            if (playPromise !== undefined) {
+                                playPromise.then(function() {
+                                    // Automatic playback started!
+                                }).catch(function(error) {
+                                    // Automatic playback failed.
+                                    // Show a UI element to let the user manually start playback.
+                                });
+                            }
+                        })
                         
                     }
                 })
-            })
         }
     })
 
