@@ -13,7 +13,7 @@ $(function(){
                 
                 var num = Math.floor(Math.random()*274);
                 $.get({
-                    async: false,
+                    
                     url: "https://bird.ioliu.cn/netease/song?id=" + music_list[num],
                 })
                 .then(function(res){
