@@ -19,7 +19,7 @@ $(function(){
                     var url = res.data.mp3.url; 
                     var name = res.data.name;
                     var author = res.data.ar[0].name;
-                    $(document).on("click touchend", ".play", function(){
+                    $(document).on("click", ".play", function(){
                         $(".player").removeClass("run");
                         $(".play").text("NEXT");
                         $("#music").attr("src", url);
@@ -45,7 +45,7 @@ $(function(){
                             playPromise.then(function() {
                                 var flag = true;
                                 
-                                $(document).on("click touchend", ".player", function(){
+                                $(document).on("click", ".player", function(){
                                     if(flag){
                                         document.querySelector('#music').pause();
                                         $(this).addClass("runPaused");
