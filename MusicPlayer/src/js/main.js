@@ -19,14 +19,17 @@ $(function(){
                     var url = res.data.mp3.url; 
                     var name = res.data.name;
                     var author = res.data.ar[0].name;
-                     
+
                     $(".play").on("click", function(){
-                        $(".player").addClass("run");
+                        $(".player").removeClass("run");
                         $(".play").text("NEXT");
                         $("#music").attr("src", url);
                         $(".music_info .song_name").text(name);
                         $(".music_info .song_author").text(author);    
                         var playPromise = document.querySelector('#music').play();
+                        document.querySelector('#music').onplaying = function(){
+                            $(".player").addClass("run");
+                        }
                         var num = Math.floor(Math.random()*274);
                         $.get({
                             url: "https://bird.ioliu.cn/netease/song?id=" + music_list[num],
