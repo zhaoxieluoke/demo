@@ -42,7 +42,22 @@ $(function(){
                         // In browsers that don’t yet support this functionality,
                         // playPromise won’t be defined.
                         if (playPromise !== undefined) {
+                            
                             playPromise.then(function() {
+                                var flag = true;
+                                $(".player").on("click", function(){
+                                    if(flag){
+                                        document.querySelector('#music').pause();
+                                        $(this).addClass("runPaused");
+                                        flag = false;
+                                    }else{
+                                        document.querySelector('#music').play();
+                                        $(this).removeClass("runPaused");
+                                        flag = true;
+                                    }
+
+                                })
+                                
                                 // Automatic playback started!
                             }).catch(function(error) {
                                 // Automatic playback failed.
