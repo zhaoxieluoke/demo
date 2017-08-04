@@ -1,0 +1,75 @@
+    
+    body {
+       background-color:  #171635;
+       font-family: microsoft yahei,Avenir,Helvetica,Arial,sans-serif;
+       text-align: center;
+    }
+    h3 {
+        color: #fafafa;
+        font-size: 28px;
+    }
+    p {
+        color: #fafafa;
+    }
+    p span{
+		font-size: 22px;
+    }
+    .classic {
+        color: #fafafa;
+        font-size: 24px;
+    }
+	.btn{
+        border:0;
+        background: none;
+        height: 30px;
+        width: 100px;
+		border-radius: 10px;
+		background-color: #B3A86A;
+		outline: 0;
+		color: #333;
+        font-size: 20px;
+        font-weight: bold;
+	}
+	.player{
+		margin:50px auto;
+		width:200px;
+		height: 200px;
+		background-color: #666;
+		border-radius: 50%;
+        position: relative;
+
+	}
+	.run{
+		animation: run 8s linear infinite ;
+	}
+	.runPaused{
+		animation: run 8s linear infinite paused;
+	}
+	.player:after{
+		content: '';
+		position: absolute;
+		top:0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		border-radius: 50%;
+		margin:auto;
+		width: 33%;
+		height: 35%;
+		background-color: #262626;
+	}
+	.arrow{
+		width:2px;
+		height: 60px;
+		top: 10px;
+		left: 50%;
+		margin-left: -1px;
+		position: absolute;
+		border-radius: 50%;
+		background-color: #c7dbc1;
+
+	}
+	@keyframes run{
+		0%{transform:rotate(0) /*scale3d(1,1,1)*/;}
+		100%{transform:rotate(360deg) /*scale3d(1.1,1.1,1.1)*/;}
+	}

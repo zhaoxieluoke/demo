@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="play()">play</button>
+    <audio src="http://m10.music.126.net/20170803200116/d407f06ff235e4a255d1234e379fb8aa/ymusic/f15a/967c/199c/2408d1fd552b094a1210e2939d0e4d28.mp3"></audio>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    var play = function play(){
+        $("audio")[0].play();
+    }
+</script>
+</html>
