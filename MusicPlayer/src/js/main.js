@@ -9,7 +9,7 @@ $(function(){
                 music_list.push(ele.id);
             })
             //console.dir(music_list);
-            var num = Math.floor(Math.random()*274);
+            var num = Math.floor(Math.random()*music_list.length);
 
             $.get({
                 url: "https://bird.ioliu.cn/netease/song?id=" + music_list[num],
@@ -29,7 +29,7 @@ $(function(){
                         document.querySelector('#music').onplaying = function(){
                             $(".player").addClass("run");
                         }
-                        var num = Math.floor(Math.random()*274);
+                        var num = Math.floor(Math.random()*music_list.length);
                         $.get({
                             url: "https://bird.ioliu.cn/netease/song?id=" + music_list[num],
                         })
