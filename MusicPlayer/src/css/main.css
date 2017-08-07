@@ -36,7 +36,8 @@
 		height: 200px;
 		background-color: #666;
 		border-radius: 50%;
-        position: relative;
+		position: relative;
+		cursor: pointer;
 
 	}
 	.run{
