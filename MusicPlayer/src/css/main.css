@@ -19,7 +19,7 @@
         font-size: 24px;
     }
 	.btn{
-        border:0;
+        border:	0;
         background: none;
         height: 30px;
         width: 100px;
@@ -31,13 +31,13 @@
         font-weight: bold;
 	}
 	.player{
-		margin:50px auto;
-		width:200px;
+		cursor: pointer;
+		margin: 50px auto;
+		width: 200px;
 		height: 200px;
 		background-color: #666;
 		border-radius: 50%;
 		position: relative;
-		cursor: pointer;
 	}
 	.run{
 		animation: run 8s linear infinite ;
