@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link  href="https://cdnjs.cloudflare.com/ajax/libs/cropper/3.0.0-rc.3/cropper.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body onload="loadImageFile();">
+    <div class="container">
+        <img id="uploadPreview" style="" src=""/>
+       <input type="file" name="" value="" onchange="loadImageFile();"> 
+       <button type="button" onclick="getCropPicture()">get picture</button>
+       <div class="display"></div>
+    </div>
+</body>
+<style>
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+.container{
+    min-height: 400px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/3.0.0-rc.3/cropper.js"></script>
+<script>
+    var oFReader = new FileReader(), rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
+    oFReader.onload = function (oFREvent) {
+        document.getElementById("uploadPreview").src = oFREvent.target.result;
+        $("#uploadPreview").cropper();
+    };
+
+    function loadImageFile() {
+        if ($("input[type=file]")[0].files.length === 0) { return; }
+        var oFile = $("input[type=file]")[0].files[0];
+        if (!rFilter.test(oFile.type)) { alert("You must select a valid image file!"); return; }
+        oFReader.readAsDataURL(oFile);
+    }
+    
+    function getCropPicture() {
+       var canvasImg =  $("#uploadPreview").cropper("getCroppedCanvas");
+        $(".display").html(canvasImg);
+        
+    }
+</script>
+</html>
