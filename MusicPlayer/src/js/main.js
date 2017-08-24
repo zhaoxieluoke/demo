@@ -1,6 +1,6 @@
 $(function(){
     $.get({
-    url: "https://bird.ioliu.cn/netease/playlist?id=39742899"
+        url: "https://bird.ioliu.cn/netease/playlist?id=39742899"
     })
     .then(function(res){
         if(res.code == 200){
@@ -69,9 +69,38 @@ $(function(){
             })
         }
     })
-
+    skin();
 })
+var skin = function skin() {
+    $(".menu_icon").on("click", function(){
 
-var promise_way = function promise_way(){
-    $.ajax()
+        $(".main_menu").css("transform","translateX(0)");
+        $(".main_menu .menu_close").css("transform", "rotate(90deg)");
+
+    })
+    $(".container").on("click", ".theme_light", function(){
+        theme_light();
+        menu_close();
+    })
+    $(".menu_close").on("click", function(){
+        menu_close();
+    })
+    var menu_close = function menu_close() {
+        $(".main_menu").css("transform","translateX(100%)");
+        $(this).css("transform", "rotate(0deg)");
+    }
+
+    var theme_light  = function theme_light() {
+        $(".container").css("backgroundImage", "url(src/images/light.jpg)");
+        $(".player").css({
+            "backgroundColor":"rgba(0, 0, 0, 0.15)"
+        })
+        $("h3").css("color", "#ff9e00");
+        $(".player").addClass("player_light");
+        $(".btn").css({
+            "backgroundColor": "#f99500",
+            "color": "#faf2ff"
+        })
+    }
 }
+

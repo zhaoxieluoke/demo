@@ -1,13 +1,21 @@
     
-    body {
-       background-color:  #171635;
-       font-family: microsoft yahei,Avenir,Helvetica,Arial,sans-serif;
+	
+	html, body {
+	   padding: 0;
+	   margin: 0;
+	   height: 100%;
+	   overflow-y: auto;
+       font-family: campton,NanumBarunGothic,Malgun Gothic,dotum,sans-serif;
        text-align: center;
-    }
+	}
+
     h3 {
         color: #fafafa;
         font-size: 28px;
-    }
+	}
+	a {
+		text-decoration: none;
+	}
     p {
         color: #fafafa;
     }
@@ -17,9 +25,22 @@
     .classic {
         color: #fafafa;
         font-size: 24px;
-    }
+	}
+	ul, li {
+		list-style: none;
+	}
+	ul,li {
+		padding: 0;
+		margin: 0;
+	}
+	.container {
+		background-color:  #171635;
+		background-size: cover;		
+		overflow: hidden;
+		height: 100%;
+	}
 	.btn{
-        border:	0;
+        border:0;
         background: none;
         height: 30px;
         width: 100px;
@@ -31,13 +52,13 @@
         font-weight: bold;
 	}
 	.player{
-		cursor: pointer;
-		margin: 50px auto;
-		width: 200px;
+		margin:50px auto;
+		width:200px;
 		height: 200px;
 		background-color: #666;
 		border-radius: 50%;
-		position: relative;
+        position: relative;
+
 	}
 	.run{
 		animation: run 8s linear infinite ;
@@ -58,6 +79,9 @@
 		height: 35%;
 		background-color: #262626;
 	}
+	.player_light:after {
+		background-color:rgba(243, 243, 243, 0.48);
+	}
 	.arrow{
 		width:2px;
 		height: 60px;
@@ -72,4 +96,57 @@
 	@keyframes run{
 		0%{transform:rotate(0) /*scale3d(1,1,1)*/;}
 		100%{transform:rotate(360deg) /*scale3d(1.1,1.1,1.1)*/;}
+	}
+	#menu {
+		position: absolute;
+		right: 0;
+		top: 0;
+		color: #fafafa;
+		padding-right: 10px;
+	}
+	.menu_icon {
+		font-size: 36px;
+		line-height: 1;
+	}
+	.main_menu {
+		
+		top:0;
+		right: 0;
+		background-color: rgba(0,0,0,0.6);
+		position: fixed;
+		z-index: 1001;
+		height: 100%;
+		width: 100%;
+		transform: translateX(100%); 
+		transition-duration: 500ms;
+	}
+	.main_menu .menu_close {
+		position: fixed;
+		left: 0;
+		top: 0;
+		transform: rotate(0deg);
+		transition-duration: 500ms;
+		color: #979797;
+
+		font-size: 36px;
+		line-height: 1;
+	}
+	.main_menu ul.menu_list {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 88%;
+		height: 100%;
+		background-color: #1f1f1f;
+	}
+	.main_menu li {
+		height: 30px;
+	}
+	.main_menu .choose_color {
+		display: block;
+		height: 30px;
+		line-height: 30px;
+		color: #fafafa;
+		font-size: 20px;
+		font-weight: 500;
 	}

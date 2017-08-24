@@ -6,24 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="stylesheet" type="text/css" href="src/css/main.css"/>
+    <style type="text/css">
+        .icon {
+           width: 1em; height: 1em;
+           vertical-align: -0.15em;
+           fill: currentColor;
+           overflow: hidden;
+        }
+    </style>
     <title>Music Player</title>
 </head>
 <body>
-
-    <h3>MUSIC</h3>
-    <button class="btn play">PLAY</button>
-	<p class="music_info">
-        <span class="song_name"></span> - <span class="song_author"></span>
-    </p>
-    <div class="music_box">
-		<div class="player">
-			<div class="arrow"></div>
-		</div>
-		 <audio id="music" src=""  loop="true" preload="auto">
-			您的浏览器不支持 audio 标签
-		</audio>
+    <div class="container">
+        <div id="menu">
+            <div class="menu_icon"> 
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-menu"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="main_menu">
+            
+            <div class="menu_close">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-menu"></use>
+                </svg>
+            </div>
+            <ul class="menu_list">
+                <li><a  class="choose_color theme_dark" href="javascript:;">Dark</a></li>
+                <li><a  class="choose_color theme_light" href="javascript:;">Light</a></li>
+            </ul>
+        </div>
+        <h3>MUSIC</h3>
+        <button class="btn play">PLAY</button>
+        <p class="music_info">
+            <span class="song_name"></span> - <span class="song_author"></span>
+        </p>
+        <div class="music_box">
+            <div class="player">
+                <div class="arrow"></div>
+            </div>
+            <audio id="music" src=""  loop="true" preload="auto">
+                您的浏览器不支持 audio 标签
+            </audio>
+        </div>
     </div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="src/icon/font_395419_8z7vwc7wrtuzncdi/iconfont.js"></script>
 <script src="src/js/main.js"></script>
 </html>
