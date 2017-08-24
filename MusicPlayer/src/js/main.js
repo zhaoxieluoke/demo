@@ -78,10 +78,17 @@ var skin = function skin() {
         $(".main_menu .menu_close").css("transform", "rotate(90deg)");
 
     })
+    //选择亮色主题
     $(".container").on("click", ".theme_light", function(){
         theme_light();
         menu_close();
     })
+    //选择暗色主题
+    $(".container").on("click", ".theme_dark", function(){
+        theme_dark();
+        menu_close();
+    })
+    //关闭菜单
     $(".menu_close").on("click", function(){
         menu_close();
     })
@@ -89,7 +96,7 @@ var skin = function skin() {
         $(".main_menu").css("transform","translateX(100%)");
         $(this).css("transform", "rotate(0deg)");
     }
-
+    //亮色主题
     var theme_light  = function theme_light() {
         $(".container").css("backgroundImage", "url(src/images/light.jpg)");
         $(".player").css({
@@ -100,6 +107,19 @@ var skin = function skin() {
         $(".btn").css({
             "backgroundColor": "#f99500",
             "color": "#faf2ff"
+        })
+    }
+    //暗色主题
+    var theme_dark  = function theme_dark() {
+        $(".container").css("backgroundImage", "none");
+        $(".player").css({
+            "backgroundColor":"#666"
+        })
+        $("h3").css("color", "#fafafa");
+        $(".player").removeClass("player_light");
+        $(".btn").css({
+            "backgroundColor": "#B3A86A",
+            "color": "#333"
         })
     }
 }
