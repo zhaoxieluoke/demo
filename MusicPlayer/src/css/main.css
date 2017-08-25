@@ -1,12 +1,25 @@
     
-	
+	@font-face {
+		font-family: 'campton';
+		src:  local("Microsoft Yahei");
+		unicode-range: U+4E00-9FFF;
+	}
+	@font-face {
+		font-family: 'campton';
+		src: url('../font/campton/Campton-BoldDEMO.otf');
+		unicode-range: U+00-024F;
+	}
 	html, body {
 	   padding: 0;
 	   margin: 0;
 	   height: 100%;
 	   overflow-y: auto;
-       font-family: campton,NanumBarunGothic,Malgun Gothic,dotum,sans-serif;
-       text-align: center;
+       font-family: campton,NanumBarunGothic,Malgun Gothic,dotum,sans-serif !important;
+	   text-align: center;
+	   
+	}
+	button {
+		font-family: campton,NanumBarunGothic,Malgun Gothic,dotum,sans-serif !important;		
 	}
 
     h3 {
