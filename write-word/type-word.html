@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="word">
+        Become a old man, filled with regedit, and waiting for die alone.
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>   
+    (function($){
+        $.fn.typewriter = function() {
+            var $this = $(this), $val = $(this).html(), index = 0;
+            var begin_text = $this.html("");
+            var iTimer = setInterval(function(){
+                $this.html($val.substring(0,index)+ (index & 1 ? '_' : ''));
+                index < $val.length ? index ++ : clearInterval(iTimer);
+            } ,120);
+        }
+    })(jQuery);
+    $(".word").typewriter();
+</script>
+</html>
