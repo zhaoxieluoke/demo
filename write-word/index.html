@@ -15,13 +15,15 @@
 <script>   
     (function($){
         $.fn.typewriter = function() {
-            var $this = $(this), $val = $(this).html(), index = 0;
-            var begin_text = $this.html("");
-            var iTimer = setInterval(function(){
-                $this.html($val.substring(0,index)+ (index & 1 ? '_' : ''));
+            let $this = $(this), $val = $(this).html(), index = 0;
+            let begin_text = $this.html("");
+            let iTimer = setInterval(function(){
+                let etc = index & 1 ? '_' : '';
+                $this.html($val.substring(0,index)+ etc );
                 index < $val.length ? index ++ : clearInterval(iTimer);
             } ,120);
         }
+        return this;
     })(jQuery);
     $(".word").typewriter();
 </script>
